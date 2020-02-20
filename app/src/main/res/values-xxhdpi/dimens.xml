@@ -9,5 +9,5 @@
     <dimen name="margin5dp">5dp</dimen>
     <dimen name="margin25dp">25dp</dimen>
     <dimen name="margin15dp">15dp</dimen>
-    <dimen name="imageFragmentTaille">50dp</dimen>
+    <dimen name="imageFragmentTaille">45dp</dimen>
 </resources>

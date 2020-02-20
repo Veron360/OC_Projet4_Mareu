@@ -95,7 +95,7 @@
                     android:id="@+id/LLdate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin20dp"
+                    android:layout_marginStart="@dimen/margin10dp"
                     android:gravity="center"
                     android:orientation="vertical"
                     app:layout_constraintStart_toEndOf="@id/LLHoraire"
