@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MaRéu</string>
+    <string name="trie_par_salle">Filtre par Salle</string>
+    <string name="filtre_par_date">Filtre par Date</string>
+    <string name="salle_reunion">Réunion A</string>
+    <string name="heure_fragment">-14h00-</string>
+    <string name="nom">Nom</string>
+    <string name="e_mail">toto@gmail.com</string>
+    <string name="sujet_de_la_reunion">Sujet de la Réunion</string>
+    <string name="heure">Horaire</string>
+    <string name="Horaire">12h45</string>
+    <string name="salle">Numéro de la Salle</string>
+    <string name="NumeroSalle">1</string>
+    <string name="Mail">Adresse Mail Participant</string>
+    <string name="TestMail">toto@gmail.com</string>
+    <string name="hint12">12:30 AM</string>
+    <string name="ajouter_une_heure">Ajouter une heure</string>
+    <string name="ajouter">Enregistrer</string>
+    <string name="salle_n_1">Salle n°1</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="filtrer_par">Filtrer Par:</string>
+    <string name="date">Date</string>
+    <string name="_01_03_20">01/02/2020</string>
+    <string name="ajouter_une_date">Ajouter une date</string>
+    <string name="datefragment">01/02/2020</string>
+    <string name="ajouter_participant">Ajouter Participant</string>
+    <string name="utilisateur">Utilisateur</string>
+    <string name="filtre_par">Filtrer par:</string>
+    <string name="annuler">Annuler</string>
+    <string name="valider">Valider</string>
+
+
+    <string name="erreur_detail">Tous les champs ne sont pas remplis ou sélectionner</string>
+    <string name="mail_invalid">l\' Adresse mail est invalide</string>
+
+</resources>
