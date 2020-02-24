@@ -36,6 +36,13 @@ public class MeetingApiService implements ApiService {
         List<Meeting> filteredMeetings = new ArrayList<>();
 
         for (Meeting meeting : meetings) {
+            if (roomName.equals("Salles") || meeting.getPlace().getRoom().equals(roomName)){
+                filteredMeetings.add(meeting);
+            }
+            if (date.equals("Dates") || meeting.getDate().equals(date)) {
+                filteredMeetings.add(meeting);
+            }
+
             if (roomName.equals("Salles") || meeting.getPlace().getRoom().equals(roomName)) {
                 if (date.equals("Dates") || meeting.getDate().equals(date)) {
                     filteredMeetings.add(meeting);
