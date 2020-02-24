@@ -179,12 +179,14 @@ public class InstrumentedTest {
 
         //Clique sur le filtre
         onView(withId(R.id.dialog)).perform(click());
-        //vérifie si la boite de dialog est bien ouverte.
+        //vérifie si la boite de dialog est bien ouverte
         onView(withId(R.id.HoraireText)).check(matches(isDisplayed()));
         // clique sur le spinner Room
         onView(withId(R.id.room_spinner_dialog)).perform(click());
+        onView(ViewMatchers.withText("Salle n°2")).perform(click());
+        /**
         onData(CoreMatchers.allOf(is(instanceOf(String.class)),
-                is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click());
+                is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click()); */
         //clique sur valider
         onView(withId(R.id.button_valider_dialog)).perform(click());  // TODO Probléme
         //On vérifie qu'il reste un item dans la liste
