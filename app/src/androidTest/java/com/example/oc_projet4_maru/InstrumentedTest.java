@@ -112,22 +112,6 @@ public class InstrumentedTest {
     }
 
     /**
-     * Test pour vérifier si possible d'ajouter une réunion sans remplir les champs
-     */
-    @Test
-    public void savedMeetingEmpty(){
-        // clique sur bouton deuxiéme activiter
-        onView(withId(R.id.fab)).perform(click());
-        // Vérifie su bien sur l'autre activiter
-        onView(withId(R.id.HoraireText)).check(matches(isDisplayed()));
-        // clique sur sauvegarder
-        onView(withId(R.menu.menu_detail)).perform(click()); //TODO: probléme au clic
-        // Vérifie su bien toujours sur seconde activité
-        onView(withId(R.id.HoraireText)).check(matches(isDisplayed()));
-    }
-
-
-    /**
      * Test suppression réunion
      */
     @Test
@@ -148,7 +132,6 @@ public class InstrumentedTest {
     /**
      * Vérifie le filtre Room
      */
-    //TODO: non vérifié
     @Test
     public void checkIfFilteringMeetingsIsWorking() {
 
@@ -157,7 +140,7 @@ public class InstrumentedTest {
         // Vérifier si le sujet est correct
         onView(ViewMatchers.withId(R.id.Nom_Fragment)).check(matches(withText("Sujet 1")));
         // Vérifier si les mails sont correct
-        onView(ViewMatchers.withId(R.id.Mail_Fragment)).check(matches(withText("toto@gmail.com, homer@gmail.com ")));
+        onView(ViewMatchers.withId(R.id.Mail_Fragment)).check(matches(withText("toto@gmail.com, homer@gmail.com")));
         // Vérifier si la salle est correct
         onView(ViewMatchers.withId(R.id.Salle_reunion)).check(matches(withText("Salle n°5")));
 
@@ -169,6 +152,8 @@ public class InstrumentedTest {
         onView(withId(R.id.EditTextSujet)).check(matches(isDisplayed()));
         // clique sur l'éditText et écrit "Sujet 1"
         onView(withId(R.id.EditTextSujet)).perform(typeText("Sujet 2"));
+        //rentre le clavier
+        onView(withId(R.id.EditTextMail)).perform(closeSoftKeyboard());
         // clique sur "Ajouter une Heure" + "ok"
         onView(withId(R.id.button_hour)).perform(click());
         onView(ViewMatchers.withText("OK")).perform(click());
@@ -201,7 +186,7 @@ public class InstrumentedTest {
         onData(CoreMatchers.allOf(is(instanceOf(String.class)),
                 is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click());
         //clique sur valider
-        onView(withId(R.id.button_valider_dialog)).perform(click());
+        onView(withId(R.id.button_valider_dialog)).perform(click());  // TODO Probléme
         //On vérifie qu'il reste un item dans la liste
         onView(withId(R.id.List_Meeting_RecycleurView))
                 .check(matches(hasChildCount(ITEMS_COUNT +1)));
