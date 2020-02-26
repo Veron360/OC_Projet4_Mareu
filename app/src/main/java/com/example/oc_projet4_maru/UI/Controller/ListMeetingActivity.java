@@ -83,7 +83,7 @@ public class ListMeetingActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.dialog) {
             //Viewgroup de l'activité actuel
             ViewGroup viewGroup = findViewById(android.R.id.content);
