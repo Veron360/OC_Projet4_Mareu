@@ -184,17 +184,16 @@ public class InstrumentedTest {
         onView(withId(R.id.dialog)).perform(click());
         //vérifie si la boite de dialog est bien ouverte
         onView(withId(R.id.HoraireText)).check(matches(isDisplayed()));
-        // clique sur le spinner Room
 
+        // clique sur le spinner Room
         onView(withId(R.id.room_spinner_dialog)).perform(click());
         onData(CoreMatchers.allOf(is(instanceOf(String.class)),
                is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click());
 
-        //onData(allOf(withText("Valider"))).inRoot(isDialog()).check(matches(isDisplayed())).perform(click());
-
         //clique sur valider
         onView(withId(android.R.id.button1)).perform(click());
 
+        //onData(allOf(withText("Valider"))).inRoot(isDialog()).check(matches(isDisplayed())).perform(click());
         //onData(withId(R.id.button_valider_dialog)).perform(click());  // TODO Probléme
 
         //On vérifie qu'il reste un item dans la liste

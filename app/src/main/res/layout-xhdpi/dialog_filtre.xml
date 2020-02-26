@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/FiltreTXT"
-        android:padding="@dimen/margin20dp">
+        android:layout_marginTop="@dimen/margin15dp">
 
 
         <LinearLayout
@@ -91,7 +91,6 @@
             </Spinner>
 
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
