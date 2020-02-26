@@ -5,9 +5,7 @@
     <dimen name="margin30dp">30dp</dimen>
     <dimen name="margin10dp">10dp</dimen>
     <dimen name="margin40dp">40dp</dimen>
-    <dimen name="margin150dp">150dp</dimen>
     <dimen name="margin5dp">5dp</dimen>
-    <dimen name="margin25dp">25dp</dimen>
     <dimen name="margin15dp">15dp</dimen>
     <dimen name="imageFragmentTaille">35dp</dimen>
     <dimen name="margin45dp">45dp</dimen>

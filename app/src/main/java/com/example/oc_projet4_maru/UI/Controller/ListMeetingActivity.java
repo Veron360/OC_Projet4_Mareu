@@ -17,13 +17,11 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oc_projet4_maru.DI.Injection;
 import com.example.oc_projet4_maru.DI.RefreshDialogList;
 import com.example.oc_projet4_maru.Model.Meeting;
 import com.example.oc_projet4_maru.Service.ApiService;
-import com.example.oc_projet4_maru.UI.Adapter.MeetingViewAdapter;
 import com.example.oc_projet4_maru.UI.MeetingFragment;
 import com.example.oc_projet4_marumaru.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -85,7 +83,7 @@ public class ListMeetingActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.dialog) {
             //Viewgroup de l'activité actuel
             ViewGroup viewGroup = findViewById(android.R.id.content);
@@ -108,7 +106,7 @@ public class ListMeetingActivity extends AppCompatActivity {
             configureRoomSpinner();
 
 
-            // Boutton "OK" dialog
+              // Boutton "OK" dialog
             Button positiveButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
             positiveButton.setOnClickListener(v -> {
                 EventBus.getDefault().post(new RefreshDialogList(filteredDate, filteredRoom));

@@ -10,7 +10,6 @@ import com.example.oc_projet4_maru.UI.Controller.ListMeetingActivity;
 import com.example.oc_projet4_marumaru.R;
 
 import org.hamcrest.CoreMatchers;
-import org.hamcrest.core.AllOf;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -22,14 +21,12 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.RootMatchers.isDialog;
 import static androidx.test.espresso.matcher.RootMatchers.isPlatformPopup;
 import static androidx.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
@@ -70,13 +67,13 @@ public class InstrumentedTest {
         onView(withId(R.id.EditTextMail)).perform(closeSoftKeyboard());
         // clique sur "Ajouter une Heure" + "ok"
         onView(withId(R.id.button_hour)).perform(click());
-        onView(ViewMatchers.withText("OK")).perform(click());
+        onView(withText("OK")).perform(click());
         // clique sur "Ajouter une date" + "ok"
         onView(withId(R.id.button_date)).perform(click());
-        onView(ViewMatchers.withText("OK")).perform(click());
+        onView(withText("OK")).perform(click());
         //Spinner
         onView(withId(R.id.EditTextSalle)).perform(click());
-        onView(ViewMatchers.withText("Salle n°5")).perform(click());
+        onView(withText("Salle n°5")).perform(click());
         // clique sur l'éditText Mail (2 utilisateurs)
         onView(withId(R.id.EditTextMail)).perform(typeText("toto@gmail.com"));
         //rentre le clavier
@@ -159,13 +156,13 @@ public class InstrumentedTest {
         onView(withId(R.id.EditTextMail)).perform(closeSoftKeyboard());
         // clique sur "Ajouter une Heure" + "ok"
         onView(withId(R.id.button_hour)).perform(click());
-        onView(ViewMatchers.withText("OK")).perform(click());
+        onView(withText("OK")).perform(click());
         // clique sur "Ajouter une date" + "ok"
         onView(withId(R.id.button_date)).perform(click());
-        onView(ViewMatchers.withText("OK")).perform(click());
+        onView(withText("OK")).perform(click());
         //Spinner
         onView(withId(R.id.EditTextSalle)).perform(click());
-        onView(ViewMatchers.withText("Salle n°2")).perform(click()); // change Salle
+        onView(withText("Salle n°2")).perform(click()); // change Salle
         // clique sur l'éditText Mail (2 utilisateurs)
         onView(withId(R.id.EditTextMail)).perform(typeText("toto@gmail.com"));
         onView(withId(R.id.EditTextMail)).perform(closeSoftKeyboard());
