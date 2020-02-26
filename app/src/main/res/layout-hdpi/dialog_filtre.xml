@@ -26,13 +26,13 @@
         android:id="@+id/CLDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin10dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FiltreTXT">
+        app:layout_constraintTop_toBottomOf="@id/FiltreTXT"
+        android:padding="@dimen/margin20dp">
 
 
         <LinearLayout
@@ -96,62 +96,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <LinearLayout
-        android:id="@+id/LLdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin30dp"
-        android:layout_marginTop="@dimen/margin10dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@id/CLDialog"
-        app:layout_constraintTop_toBottomOf="@id/FiltreTXT">
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CLDialog"
-        android:paddingBottom="@dimen/margin15sp">
-
-
-        <Button
-            android:id="@+id/button_annuler_dialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin10dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="@string/annuler"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hour" />
-
-
-        <Button
-            android:id="@+id/button_valider_dialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin10dp"
-            android:layout_marginTop="@dimen/margin10dp"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="@string/valider"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hour" />
-
-    </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 

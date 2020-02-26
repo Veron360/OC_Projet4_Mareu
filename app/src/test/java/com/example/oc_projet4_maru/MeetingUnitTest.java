@@ -79,7 +79,7 @@ public class MeetingUnitTest {
         mService.addMeeting(mMeeting1);
         mService.addMeeting(mMeeting2);
         List<Meeting> filterMeetings = mService.getMeetingsListFilter("15/02/2020", "Salle n°4");
-        assertEquals(3, filterMeetings.size()); //TODO expected = 1
+        assertEquals(1, filterMeetings.size());
         assertEquals(mMeeting2, filterMeetings.get(0));
     }
 

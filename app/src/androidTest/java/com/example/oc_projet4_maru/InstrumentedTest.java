@@ -10,6 +10,7 @@ import com.example.oc_projet4_maru.UI.Controller.ListMeetingActivity;
 import com.example.oc_projet4_marumaru.R;
 
 import org.hamcrest.CoreMatchers;
+import org.hamcrest.core.AllOf;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,15 +22,17 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.isDialog;
 import static androidx.test.espresso.matcher.RootMatchers.isPlatformPopup;
 import static androidx.test.espresso.matcher.ViewMatchers.hasChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.instanceOf;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 
 @RunWith(AndroidJUnit4.class)
@@ -182,13 +185,18 @@ public class InstrumentedTest {
         //vérifie si la boite de dialog est bien ouverte
         onView(withId(R.id.HoraireText)).check(matches(isDisplayed()));
         // clique sur le spinner Room
+
         onView(withId(R.id.room_spinner_dialog)).perform(click());
-        onView(ViewMatchers.withText("Salle n°2")).perform(click());
-        /**
         onData(CoreMatchers.allOf(is(instanceOf(String.class)),
-                is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click()); */
+               is("Salle n°2"))).inRoot(isPlatformPopup()).perform(click());
+
+        //onData(allOf(withText("Valider"))).inRoot(isDialog()).check(matches(isDisplayed())).perform(click());
+
         //clique sur valider
-        onView(withId(R.id.button_valider_dialog)).perform(click());  // TODO Probléme
+        onView(withId(android.R.id.button1)).perform(click());
+
+        //onData(withId(R.id.button_valider_dialog)).perform(click());  // TODO Probléme
+
         //On vérifie qu'il reste un item dans la liste
         onView(withId(R.id.List_Meeting_RecycleurView))
                 .check(matches(hasChildCount(ITEMS_COUNT +1)));
@@ -196,5 +204,8 @@ public class InstrumentedTest {
         onView(ViewMatchers.withId(R.id.Salle_reunion)).check(matches(withText("Salle n°2")));
 
     }
+
+
+
 
 }

@@ -17,14 +17,12 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.oc_projet4_maru.DI.Injection;
 import com.example.oc_projet4_maru.DI.RefreshDialogList;
 import com.example.oc_projet4_maru.Model.Meeting;
 import com.example.oc_projet4_maru.Service.ApiService;
 import com.example.oc_projet4_maru.UI.MeetingFragment;
-import com.example.oc_projet4_maru.UI.Adapter.MeetingViewAdapter;
 import com.example.oc_projet4_marumaru.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -39,10 +37,6 @@ import butterknife.ButterKnife;
 
 public class ListMeetingActivity extends AppCompatActivity {
 
-
-    private List<Meeting> mMeetings;
-    private RecyclerView mRecyclerView;
-    private MeetingViewAdapter mAdapter;
     private Spinner mDialogRoomsSpinner;
     private Spinner mDialogDatesSpinner;
     private String filteredDate;
@@ -96,7 +90,9 @@ public class ListMeetingActivity extends AppCompatActivity {
             //xlm du filtre
             View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_filtre, viewGroup, false);
             //AlertDialog
-            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
+                    .setPositiveButton("ok", null)
+                    .setNegativeButton("Cancel", null);
             dialogBuilder.setView(dialogView);
             AlertDialog alertDialog = dialogBuilder.create();
             alertDialog.show();
@@ -110,16 +106,16 @@ public class ListMeetingActivity extends AppCompatActivity {
             configureRoomSpinner();
 
 
-            Button mDialogCancelBtn = alertDialog.findViewById(R.id.button_annuler_dialog);
-            mDialogCancelBtn.setOnClickListener(v -> alertDialog.dismiss());
 
 
-            Button mDialogConfirmBtn = alertDialog.findViewById(R.id.button_valider_dialog);
-            mDialogConfirmBtn.setOnClickListener(v -> {
-                EventBus.getDefault().post(new RefreshDialogList(filteredDate, filteredRoom));
-                alertDialog.dismiss();
-                Log.d("TOTO", "Clique bouton confirme dialog");
-
+            Button positiveButton = alertDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+            positiveButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EventBus.getDefault().post(new RefreshDialogList(filteredDate, filteredRoom));
+                    alertDialog.dismiss();
+                    Log.d("TOTO", "Clique bouton confirme dialog");
+                }
             });
         }
         return super.onOptionsItemSelected(item);
