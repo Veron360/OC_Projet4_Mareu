@@ -87,7 +87,7 @@ public class ListMeetingActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.dialog) {
             //Viewgroup de l'activité actuel
             ViewGroup viewGroup = findViewById(android.R.id.content);
-            //xlm du filtre
+            //xlm du filtre dialog
             View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_filtre, viewGroup, false);
             //AlertDialog
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
