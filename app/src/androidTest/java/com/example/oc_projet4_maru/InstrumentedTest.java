@@ -7,7 +7,6 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
-import com.example.oc_projet4_maru.Model.Meeting;
 import com.example.oc_projet4_maru.Service.ApiService;
 import com.example.oc_projet4_maru.UI.Controller.ListMeetingActivity;
 import com.example.oc_projet4_marumaru.R;
@@ -45,7 +44,6 @@ public class InstrumentedTest {
 
 
     private final static int ITEMS_COUNT = 0;
-    public Meeting meeting;
 
 
     @Rule
